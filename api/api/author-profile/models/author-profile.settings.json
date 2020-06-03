@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "author_profiles",
+  "info": {
+    "name": "AuthorProfile"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "user": {
+      "via": "author_profile",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "public_email": {
+      "type": "email"
+    }
+  }
+}

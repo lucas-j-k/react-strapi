@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/author-profiles",
+      "handler": "author-profile.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/author-profiles/count",
+      "handler": "author-profile.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/author-profiles/:id",
+      "handler": "author-profile.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/author-profiles",
+      "handler": "author-profile.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/author-profiles/:id",
+      "handler": "author-profile.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/author-profiles/:id",
+      "handler": "author-profile.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

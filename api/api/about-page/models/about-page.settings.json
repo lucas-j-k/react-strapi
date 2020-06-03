@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "connection": "default",
+  "collectionName": "about_pages",
+  "info": {
+    "name": "About Page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}
