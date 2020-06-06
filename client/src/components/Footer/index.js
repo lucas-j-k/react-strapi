@@ -6,7 +6,6 @@
 
 import React from 'react';
 import { AiOutlineCopyrightCircle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 import footerNavItems from './footerNavItems';
 
 import UI from '../UI';

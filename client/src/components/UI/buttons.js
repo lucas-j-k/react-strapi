@@ -5,7 +5,7 @@
  */
 
 import styled from 'styled-components';
-import { space, flexbox, shadow, layout, typography, color  } from 'styled-system';
+import { space, flexbox, layout, color } from 'styled-system';
 
 
 const BaseButtonInput = styled.input.attrs(props => ({

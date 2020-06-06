@@ -7,7 +7,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { color, space, layout, typography, system  } from 'styled-system';
 
 import UI from '../UI';
 

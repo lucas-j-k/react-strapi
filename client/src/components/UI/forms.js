@@ -5,7 +5,7 @@
  */
 
 import styled from 'styled-components';
-import { space, flexbox, shadow, layout, typography  } from 'styled-system';
+import { space, layout } from 'styled-system';
 
 
 const baseTextInput = styled.input`

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 
 import ArticleFetchFeed from '../../components/ArticleFetchFeed';
 import PageHeading from '../../components/PageHeading';
-import ErrorPanel from '../../components/ErrorPanel';
-import LoadingPanel from '../../components/LoadingPanel';
 import Layouts from '../../components/Layouts';
 import UI from '../../components/UI';
 

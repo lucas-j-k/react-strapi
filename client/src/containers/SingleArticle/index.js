@@ -4,8 +4,8 @@
  * 
  */
 
-import React, { useEffect, useState } from "react";
-import { useParams, Link, Redirect } from 'react-router-dom';
+import React from "react";
+import { useParams, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 import UI from '../../components/UI';

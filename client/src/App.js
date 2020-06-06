@@ -7,7 +7,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize'
 
 import HomePage from './containers/HomePage';

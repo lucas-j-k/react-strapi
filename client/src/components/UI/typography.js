@@ -4,15 +4,9 @@
  * 
  */
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { color, space, layout, typography, system, compose  } from 'styled-system';
 import { Link } from 'react-router-dom';
-
-// Create a custom caps prop to allow easy uppercasing
-const caps = system({
-  prop: 'caps',
-  cssProperty: 'textTransform',
-})
 
 /*
 *  Utilities

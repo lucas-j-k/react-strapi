@@ -8,8 +8,6 @@ import React from 'react';
 import { AiOutlineLoading3Quarters, AiOutlineExclamationCircle } from 'react-icons/ai';
 import styled, { keyframes } from 'styled-components';
 
-import UI from '../UI';
-
 const RotateAnimation = keyframes`
 	from {
 		transform: rotate(0deg);

@@ -6,7 +6,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Markdown from 'markdown-to-jsx';
 import ReactMarkdown from 'react-markdown';
 
 import UI from '../UI';
