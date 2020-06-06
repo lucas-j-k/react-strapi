@@ -37,7 +37,7 @@ const ArticleFetchFeed = ({resourcePath, showCategories}) => {
         <UI.Box>
             {loading && <LoadingPanel showText/>}
             {errorOccurred && <ErrorPanel message={errorMessage} />}
-            {contentLoaded && content.length === 0 && (
+            {contentLoaded && content && content.length === 0 && (
                 <ErrorPanel message='No articles found for this category' />
             )}
             {contentLoaded && content && content.length > 0 && (

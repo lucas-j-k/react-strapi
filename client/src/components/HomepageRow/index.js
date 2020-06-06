@@ -56,7 +56,7 @@ const HomepageRow = ({resourcePath, categoryTitle}) => {
             </UI.H2>
             {loading && <LoadingPanel showText/>}
             {errorOccurred && <ErrorPanel message='Unable to load articles for this category' />}
-            {rowContentLoaded && rowContent.length === 0 && (
+            {rowContentLoaded && rowContent && rowContent.length === 0 && (
                 <ErrorPanel message='No articles found for this category' />
             )}
             {rowContentLoaded && rowContent && rowContent.length > 0 && (
