@@ -1,5 +1,8 @@
 node_modules
 npm-debug.log
 *.db
+**/*.db
 *.sqlite
 *.sqlite3
+**/*.sqlite
+**/*.sqlite3
