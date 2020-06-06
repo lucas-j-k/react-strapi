@@ -16,33 +16,33 @@ const useFetchSingle = (resourcePath) => {
     const [ errorMessage, setErrorMessage ] = useState("");
     const [ loading, setLoading ] = useState(true);
 
-    const fetchData = async () => {
-    	resetState();
-	    setContentLoaded(false);
-	    setLoading(true);
-	    const apiResponse = await fetchSingleResource(resourcePath);
-	    if(apiResponse.status === 404) {
-	        setNotFound(true);
-	    }
-	    if (apiResponse.error) {
-	        setErrorOccurred(true);
-	        setErrorMessage(apiResponse.message);
-	    }
-	    setContent(apiResponse.data);
-	    setContentLoaded(true);
-	    setLoading(false);
-	}
-
-	const resetState = () => {
-		setContent(null);
-		setContentLoaded(false);
-		setNotFound(false);
-		setErrorOccurred(false);
-		setErrorMessage("");
-		setLoading(true);
-	}
-
 	useEffect(() => {
+		const fetchData = async () => {
+	    	resetState();
+		    setContentLoaded(false);
+		    setLoading(true);
+		    const apiResponse = await fetchSingleResource(resourcePath);
+		    if(apiResponse.status === 404) {
+		        setNotFound(true);
+		    }
+		    if (apiResponse.error) {
+		        setErrorOccurred(true);
+		        setErrorMessage(apiResponse.message);
+		    }
+		    setContent(apiResponse.data);
+		    setContentLoaded(true);
+		    setLoading(false);
+		}
+
+		const resetState = () => {
+			setContent(null);
+			setContentLoaded(false);
+			setNotFound(false);
+			setErrorOccurred(false);
+			setErrorMessage("");
+			setLoading(true);
+		}
+		
 		fetchData();
 		return resetState;
 	}, [resourcePath]);
