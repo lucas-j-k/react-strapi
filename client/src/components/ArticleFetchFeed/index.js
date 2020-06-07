@@ -25,10 +25,11 @@ const ArticleFetchFeed = ({resourcePath, showCategories}) => {
         loading,
     ] = useFetchSingle(resourcePath);
 
-    const renderFeed = articles => articles.map(a => (
+    const renderFeed = articles => articles.map(article => (
         <ArticlePreview 
             showCategories={showCategories} 
-            article={a} 
+            article={article}
+            key={article.id} 
         /> 
     ))
 

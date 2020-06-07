@@ -16,7 +16,14 @@ const Footer = props => (
             	<UI.List display={['block', 'flex']} mb={6} justifyContent='center' color='grayscale.7'>
 		            {
 		            	footerNavItems.map(item => (
-      							<UI.ListItem mr={4} mb={3} textAlign={['center', 'auto']}><UI.TextLink to={item.path}>{item.label}</UI.TextLink></UI.ListItem>
+      							<UI.ListItem 
+                      mr={4} 
+                      mb={3} 
+                      textAlign={['center', 'auto']}
+                      key={item.label}
+                    >
+                      <UI.TextLink to={item.path}>{item.label}</UI.TextLink>
+                    </UI.ListItem>
 		            	))
 		            }
             	</UI.List>

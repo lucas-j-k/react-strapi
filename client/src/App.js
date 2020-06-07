@@ -23,6 +23,7 @@ import ContactForm from './components/ContactForm';
 import UI from './components/UI';
 
 import theme from './theme/styled-system-theme';
+import useFetchSingle from './utilities/customHooks/useFetchSingle';
 
 
 // Set up the CSS reset as a global style
@@ -45,13 +46,30 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
 	
+  const categoriesPath = 'categories';
+
+  const [
+        categories,
+        categoriesLoaded,
+        notFound,
+        errorOccurred,
+        errorMessage,
+        loading,
+    ] = useFetchSingle(categoriesPath);
+
+    const generateCategoryRoutes = () => categories.map(category => (
+      <Route path={`/${category.slug}`} exact key={category.id}>
+        <CategoryFeed categoryId={category.id} categoryTitle={category.name}/>
+      </Route>
+    ));
+
   return (
     <ThemeProvider theme={theme}>
       {<GlobalStyle />}
         <UI.Box minHeight='100vh' bg="grayscale.7" color='grayscale.3'>
           <ErrorBoundary>
             <Router>
-              <Navbar />
+              <Navbar categories={categories} />
               <UI.Box minHeight='100vh'>
               <Switch>
                 <Route path='/about' exact >
@@ -62,15 +80,7 @@ function App() {
 	                  <ContactForm />
                   </StaticPage>
                 </Route>
-                <Route path='/sport' exact>
-                  <CategoryFeed categoryId={1} categoryTitle='Sport' />
-                </Route>
-                <Route path='/arts' exact>
-                  <CategoryFeed categoryId={2} categoryTitle='Arts & Entertainment'/>
-                </Route>
-                <Route path='/technology' exact>
-                  <CategoryFeed categoryId={3} categoryTitle='Technology' />
-                </Route>
+                  {categoriesLoaded && categories && generateCategoryRoutes()}
                 <Route path='/article/:articleId' exact >
                   <SingleArticle />
                 </Route>
@@ -78,7 +88,7 @@ function App() {
                   <AuthorPage />
                 </Route>
                 <Route path='/' exact>
-                  <HomePage />
+                  <HomePage categories={categories} />
                 </Route>
                 <Route path='/404'>
                   <NotFoundPage />

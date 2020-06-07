@@ -4,21 +4,25 @@ import { AiOutlineMenu } from 'react-icons/ai';
 
 import UI from '../../components/UI';
 
-import navItems from './navItems';
-
 const StyledNav = styled.nav`
   display: ${props => props.visible ? 'block' : 'none'};
 `;
 
-const NavLink = navItem => (
-  <UI.NavListItem mr={2} key={navItem.path} width={[1, 'auto']}>
-  	<UI.NavLink to={navItem.path}>{navItem.label}</UI.NavLink>
+const NavLink = ({path, label}) => (
+  <UI.NavListItem mr={2} key={path} width={[1, 'auto']}>
+  	<UI.NavLink to={path}>{label}</UI.NavLink>
   </UI.NavListItem>
 );
 
 
+const renderCategoryNav = categories => {
+  return categories.map(category => {
+    return <NavLink path={category.slug} label={category.name} key={category.id} />
+  })
+}
 
-const Navbar = (props) => {
+
+const Navbar = ({categories}) => {
 
   const [ navVisible, setNavVisible ] = useState(false);
 
@@ -48,9 +52,10 @@ const Navbar = (props) => {
       </UI.Box>
         <StyledNav visible={navVisible}>
             <UI.List display='flex' my={0} flexWrap='wrap' alignItems='center'>
-             {
-               navItems.map(item => NavLink(item))
-             }
+              <NavLink path='/' label='Home' />
+               {categories && renderCategoryNav(categories)}
+              <NavLink path='/about' label='About' />
+              <NavLink path='/contact' label='Contact' />
             </UI.List>
           </StyledNav>
     </UI.Box>

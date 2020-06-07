@@ -34,18 +34,18 @@ const HomepageRow = ({resourcePath, categoryTitle}) => {
         loading,
     ] = useFetchSingle(resourcePath);
 
-    const generateBody = articles => articles.map(a => (
-        <UI.Box my={[6, 2]} width={[1, '30%']}>
-            <StyledHeaderBlock bgImg={a.headerimageurl} />
-            <UI.Text color='grayscale.4' fontSize={0}>
-                Published {a.publisheddate} by <UI.TextLink to={`/author/${a.author.id}`}>{a.author.username}</UI.TextLink>
+    const generateBody = articles => articles.map(article => (
+        <UI.Box my={[6, 2]} width={[1, '30%']} key={article.id} >
+            <StyledHeaderBlock bgImg={article.headerimageurl} />
+            <UI.Text color='grayscale.4' fontSize={1}>
+                Published {article.publisheddate} by <UI.TextLink to={`/author/${article.author.id}`}>{article.author.username}</UI.TextLink>
             </UI.Text>
             <UI.H3 mt={1}>
-                <Link to={`/article/${a.id}`}>
-                    {a.title}
+                <Link to={`/article/${article.id}`}>
+                    {article.title}
                 </Link>
             </UI.H3>
-            <UI.Text mt={1} color='grayscale.3'>{a.subtitle}</UI.Text>
+            <UI.Text mt={1} color='grayscale.3'>{article.subtitle}</UI.Text>
         </UI.Box>
     ))
 

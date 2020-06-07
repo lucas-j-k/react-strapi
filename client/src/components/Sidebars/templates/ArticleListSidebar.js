@@ -8,19 +8,19 @@ import UI from '../../UI';
 
 
 // Render a list of articles
-const renderArticles = articles => articles.map(a => (
-	<UI.Box mb={6}>
+const renderArticles = articles => articles.map(article => (
+	<UI.Box mb={6} key={article.id}>
 		<UI.Box pt={1}>
 			<UI.Span bg='primary.7' color='primary.1' p={1} fontSize={0}>
-				{a.category.name}
+				{article.category.name}
 			</UI.Span>
 		</UI.Box>
 		<UI.Text fontSize={2} color='grayscale.2' mt={2}>
-			<Link to={`/article/${a.id}`}>
-				{a.title}
+			<Link to={`/article/${article.id}`}>
+				{article.title}
 			</Link>
 		</UI.Text>
-		<UI.Text color='grayscale.4' mt={1}>{a.subtitle}</UI.Text>
+		<UI.Text color='grayscale.4' mt={1}>{article.subtitle}</UI.Text>
 	</UI.Box>
 ));
 

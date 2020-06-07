@@ -54,7 +54,7 @@ const StaticPage = ({pageName, children}) => {
         // Ready State
         if(content && contentLoaded){ 
             return (
-                <UI.Box p={4} width={[1, 1/2]} maxWidth={1024}>
+                <UI.Box p={4} width={[1, 2/3]} maxWidth={1024}>
                     <PageHeading text={content.heading} />
                     <UI.Box my={4} py={1}>
                         <MarkdownRender content={content.body} />
