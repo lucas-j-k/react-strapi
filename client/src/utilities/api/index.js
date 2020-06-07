@@ -4,15 +4,17 @@
 *
 */
 
-const API_ROOT = 'http://localhost:1337';
-
 /*
 *   Fetch content for a single resource
 *   PARAMS ::  resourcePath: string - path to the resource 
-*   RETURN ::  result:article object OR {error:bool, message:string}
+*   RETURN ::  result: object OR {error:bool, message:string}
 */
 
 export const fetchSingleResource = async (resourcePath) => {
+
+    //API base URL is defined in environment variables
+    const API_ROOT = process.env.REACT_APP_API_ROOT;
+
     try {
         const response = await fetch(`${API_ROOT}/${resourcePath}`);
         if(response.status === 404){

@@ -6,9 +6,10 @@
  */
 
 import { useEffect, useState } from "react";
-import { fetchSingleResource } from '../../api';
+import { fetchSingleResource } from '../api';
 
 const useFetchSingle = (resourcePath) => {
+
 	const [ content, setContent ] = useState(null);
 	const [ contentLoaded, setContentLoaded ] = useState(false);
     const [ notFound, setNotFound ] = useState(false);
