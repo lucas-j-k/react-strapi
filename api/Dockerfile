@@ -10,8 +10,6 @@ COPY . .
 
 ENV NODE_ENV development
 
-RUN npm build
-
 EXPOSE 1337
 
 CMD ["npm", "run", "develop"]

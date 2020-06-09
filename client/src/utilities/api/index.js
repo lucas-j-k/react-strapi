@@ -16,7 +16,7 @@ export const fetchSingleResource = async (resourcePath) => {
     const API_ROOT = process.env.REACT_APP_API_ROOT;
 
     try {
-        const response = await fetch(`${API_ROOT}/${resourcePath}`);
+        const response = await fetch(`http://${API_ROOT}/${resourcePath}`);
         if(response.status === 404){
             return {
                 error: true,

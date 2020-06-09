@@ -13,5 +13,5 @@ services:
       ports:
         - "3000:3000"
       environment:
-        - API_SERVICE=api
+        - REACT_APP_API_ROOT=localhost:1337
       stdin_open: true
