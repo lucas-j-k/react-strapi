@@ -29,10 +29,6 @@
       "plugin": "users-permissions",
       "model": "user"
     },
-    "categories": {
-      "collection": "category",
-      "via": "articles"
-    },
     "category": {
       "model": "category"
     },

@@ -14,11 +14,6 @@
       "type": "string",
       "required": true
     },
-    "articles": {
-      "via": "categories",
-      "collection": "article",
-      "dominant": true
-    },
     "slug": {
       "type": "string",
       "required": true,
